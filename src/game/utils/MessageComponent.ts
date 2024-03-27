@@ -167,8 +167,11 @@ export default class MessageComponent extends Container {
   }
 
   hide() {
-    this.isShowing = false;
-    this.animationController.animateTo(0);
+    if (this.isShowing) {
+      this.isShowing = false;
+      this.animationController.animateTo(0);
+      this.closeObservers.forEach((item) => item());
+    }
   }
 
   toggle() {
@@ -177,5 +180,11 @@ export default class MessageComponent extends Container {
     } else {
       this.show();
     }
+  }
+
+  private closeObservers: (() => void)[] = [];
+  onClose(callback: () => void): this {
+    this.closeObservers.push(callback);
+    return this;
   }
 }
