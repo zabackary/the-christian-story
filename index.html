@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Christian Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        background-color: #000;
+      }
+      .container,
+      .loading-container {
+        width: 960px;
+        height: 720px;
+        background-color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .container {
+        position: fixed;
+      }
+      #loading-progress,
+      .loading-container,
+      canvas,
+      img {
+        position: absolute;
+      }
+      canvas {
+        inset: 0;
+        width: 960px;
+        height: 720px;
+      }
+      img {
+        image-rendering: pixelated;
+        width: 600px;
+        height: 480px;
+        top: 120px;
+        left: 180px;
+      }
+      #loading-progress {
+        width: 156px;
+        height: 24px;
+        top: 426px;
+        left: 408px;
+        color: #fff;
+        text-align: center;
+        font-family: "Pixelify Sans", serif;
+      }
+      #loading-progress::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(100% * var(--progress));
+        background-color: #ed1c24;
+        transition: width 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loading-container">
+        <img src="assets/loading/1.png" />
+        <div id="loading-progress" style="--progress: 0">loading...</div>
+      </div>
+      <canvas></canvas>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
