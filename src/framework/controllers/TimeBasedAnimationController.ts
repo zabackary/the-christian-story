@@ -29,7 +29,8 @@ export default class TimeBasedAnimationController extends Controller<number> {
     private rangeMin: number,
     private rangeMax: number,
     private immediateStart: boolean = false,
-    private repeat: boolean = false
+    private repeat: boolean = false,
+    private defaultCallbackValue: number | null = null
   ) {
     super();
     this.value = rangeMin;
@@ -62,8 +63,14 @@ export default class TimeBasedAnimationController extends Controller<number> {
         this.start();
       }
     }
-    if (!this.started) return this.rangeMin;
-    if (this.finished) return this.rangeMax;
+    if (!this.started)
+      return this.defaultCallbackValue !== null
+        ? this.defaultCallbackValue
+        : this.rangeMin;
+    if (this.finished)
+      return this.defaultCallbackValue !== null
+        ? this.defaultCallbackValue
+        : this.rangeMax;
     // in theory, we can't jump back in time, so only clamping on the top bound
     const timeElapsedFraction = Math.min(
       1,
