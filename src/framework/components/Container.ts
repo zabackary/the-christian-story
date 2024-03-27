@@ -61,28 +61,27 @@ export default class Container extends Component {
     });
   }
 
-  setBounds(newBounds: Rect) {
+  setBounds(newBounds: Rect): this {
     this.bounds = newBounds;
+    return this;
   }
 
-  setOpacity(newOpacity: number) {
+  setOpacity(newOpacity: number): this {
     this.opacity = newOpacity;
+    return this;
   }
 
   /**
    * Renders the contents flipped. DOES NOT CHANGE EVENTS (including mouse).
    * @param inverted Whether to flip horizontally
    */
-  setInversionEffect(inverted: boolean) {
+  setInversionEffect(inverted: boolean): this {
     this.inversionEffect = inverted;
+    return this;
   }
 
-  setDisableChildUpdates(disabled: boolean) {
+  setDisableChildUpdates(disabled: boolean): this {
     this.disableChildUpdates = disabled;
-  }
-
-  withOpacity(opacity: number): this {
-    this.setOpacity(opacity);
     return this;
   }
 }

@@ -54,8 +54,9 @@ export default class ScrollingContainer extends Container {
     });
   }
 
-  setScroll(x: number, y: number) {
+  setScroll(x: number, y: number): this {
     this.scrollX = Math.floor(x);
     this.scrollY = Math.floor(y);
+    return this;
   }
 }
