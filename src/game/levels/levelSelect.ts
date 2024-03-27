@@ -34,6 +34,7 @@ export default function levelSelect(
   let scrollBtns: Container;
   let aboutButton: Container;
   let writtenPortionButton: Container;
+  let repoButton: Container;
   let aboutMsg: MessageComponent;
   let writtenPortionMsg: MessageComponent;
 
@@ -89,6 +90,7 @@ export default function levelSelect(
         scrollBtns.setOpacity(opacity);
         aboutButton.setOpacity(opacity);
         writtenPortionButton.setOpacity(opacity);
+        repoButton.setOpacity(opacity);
       })
       .listener(),
     titleAnimation
@@ -195,27 +197,6 @@ export default function levelSelect(
         height: 5 * PIXEL_ART_SIZE,
       }
     )),
-    (aboutButton = labeledImageButton(
-      "assets/level-select/about.png",
-      "assets/level-select/about-pressed.png",
-      (ctx: CanvasRenderingContext2D) => {
-        ctx.textAlign = "left";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = "#333";
-        ctx.font = `16px ${FONT}`;
-        ctx.fillText("About", 10 * PIXEL_ART_SIZE, 4 * PIXEL_ART_SIZE);
-      },
-      () => {
-        aboutMsg.show();
-      },
-      {
-        x: 4 * PIXEL_ART_SIZE,
-        y: CANVAS_HEIGHT - 12 * PIXEL_ART_SIZE,
-        width: 8 * PIXEL_ART_SIZE,
-        height: 8 * PIXEL_ART_SIZE,
-      },
-      400
-    )),
     (writtenPortionButton = labeledImageButton(
       "assets/level-select/written.png",
       "assets/level-select/written-pressed.png",
@@ -234,7 +215,53 @@ export default function levelSelect(
         writtenPortionMsg.show();
       },
       {
-        x: 36 * PIXEL_ART_SIZE,
+        x: 4 * PIXEL_ART_SIZE,
+        y: CANVAS_HEIGHT - 12 * PIXEL_ART_SIZE,
+        width: 8 * PIXEL_ART_SIZE,
+        height: 8 * PIXEL_ART_SIZE,
+      },
+      400
+    )),
+    (repoButton = labeledImageButton(
+      "assets/level-select/repo.png",
+      "assets/level-select/repo-pressed.png",
+      (ctx: CanvasRenderingContext2D) => {
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "#333";
+        ctx.font = `16px ${FONT}`;
+        ctx.fillText(
+          "Source code (GH)",
+          10 * PIXEL_ART_SIZE,
+          4 * PIXEL_ART_SIZE
+        );
+      },
+      () => {
+        window.open("https://github.com/zabackary/the-christian-story/");
+      },
+      {
+        x: 40 * PIXEL_ART_SIZE,
+        y: CANVAS_HEIGHT - 12 * PIXEL_ART_SIZE,
+        width: 8 * PIXEL_ART_SIZE,
+        height: 8 * PIXEL_ART_SIZE,
+      },
+      400
+    )),
+    (aboutButton = labeledImageButton(
+      "assets/level-select/about.png",
+      "assets/level-select/about-pressed.png",
+      (ctx: CanvasRenderingContext2D) => {
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "#333";
+        ctx.font = `16px ${FONT}`;
+        ctx.fillText("About", 10 * PIXEL_ART_SIZE, 4 * PIXEL_ART_SIZE);
+      },
+      () => {
+        aboutMsg.show();
+      },
+      {
+        x: 76 * PIXEL_ART_SIZE,
         y: CANVAS_HEIGHT - 12 * PIXEL_ART_SIZE,
         width: 8 * PIXEL_ART_SIZE,
         height: 8 * PIXEL_ART_SIZE,
