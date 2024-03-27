@@ -62,7 +62,7 @@ export default class SimplePhysicsController extends Controller<number> {
     this.isWalking = false;
     this.lateralMovementCallback(updateInfo);
     this.characterHitBox.x += this.xVelocity * factor;
-    this.xVelocity = this.xVelocity * 0.8 * factor;
+    this.xVelocity = this.xVelocity * 0.8 ** factor;
     if (
       this.characterHitBox.x + this.characterHitBox.width >
       this.containerHitBox.x + this.containerHitBox.width

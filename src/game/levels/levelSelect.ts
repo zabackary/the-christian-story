@@ -1,3 +1,4 @@
+import { setGlobalWarp } from "../../framework/Game";
 import Container from "../../framework/components/Container";
 import DynamicImageComponent from "../../framework/components/DynamicImageComponent";
 import ScrollingContainer from "../../framework/components/ScrollingContainer";
@@ -41,6 +42,9 @@ export default function levelSelect(
       `assets/level-select/${id}.png`,
       `assets/level-select/${id}-pressed.png`,
       (ctx) => {
+        // in case fall didn't clean up after itself
+        setGlobalWarp(0);
+
         ctx.fillStyle = "#555";
         ctx.font = `18px ${FONT}`;
         ctx.textAlign = "left";

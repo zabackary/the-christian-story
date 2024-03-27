@@ -1,5 +1,12 @@
 import Component, { ComponentLike, UpdateInfo } from "./components/Component";
 import { normalizeComponent } from "./components/FunctionComponent";
+import warpCtx from "./effects/warpCtx";
+
+let globalWarp = 0;
+
+export function setGlobalWarp(deg: number) {
+  globalWarp = deg;
+}
 
 export default class Game {
   private context: CanvasRenderingContext2D;
@@ -55,6 +62,9 @@ export default class Game {
     };
     this.rootComponent.update(updateInfo);
     await this.rootComponent.render(this.context);
+    if (globalWarp !== 0) {
+      warpCtx(this.context, this.context.canvas.height / 2, globalWarp, 0, 0);
+    }
   }
 
   async loadAssets(statusCallback: (fraction: number) => void = () => {}) {

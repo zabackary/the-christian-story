@@ -1,3 +1,4 @@
+import { setGlobalWarp } from "../framework/Game";
 import creation from "./levels/creation";
 import fall from "./levels/fall";
 import levelSelect from "./levels/levelSelect";
@@ -29,6 +30,7 @@ export default function gameRoot() {
           }),
         fall: () =>
           fall(() => {
+            setGlobalWarp(0);
             match.set("select");
           }),
         redemption: () =>
