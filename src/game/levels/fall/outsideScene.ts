@@ -138,6 +138,12 @@ export default function outsideScene(onComplete: () => void) {
       // start twisty animation? how? GLOBAL STATE?
     }
   });
+  const scrimAnimation = new TimeBasedAnimationController(
+    "ease-in",
+    2000,
+    0,
+    1
+  ).onFinish(onComplete);
 
   return [
     (container = new ScrollingContainer(
@@ -187,7 +193,7 @@ export default function outsideScene(onComplete: () => void) {
             height: 60 * PIXEL_ART_SIZE,
           },
           () => {
-            onComplete();
+            scrimAnimation.start();
           }
         )),
         (characterContainer = new Container(
@@ -258,6 +264,14 @@ export default function outsideScene(onComplete: () => void) {
       "Another bird",
       "Chirp!\nWhat have we done! What's left in God's creation plan? Is it all doomed?\nIs He going to destroy us and start over?\n...\nNo, He has a plan for us, starting with the cross over there.\nQuack! Uh, I mean, chirp!"
     )),
+    (ctx: CanvasRenderingContext2D) => {
+      const oldAlpha = ctx.globalAlpha;
+      ctx.globalAlpha = oldAlpha * scrimAnimation.value;
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      ctx.globalAlpha = oldAlpha;
+    },
+    scrimAnimation.listener(),
     physicsController.listener(),
     fruitPhysicsController.listener(),
     warpAnimation.listener(),
