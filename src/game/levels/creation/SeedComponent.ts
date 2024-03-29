@@ -117,7 +117,7 @@ export default class SeedComponent extends Component {
         seed.y += seed.yvel;
         seed.x += seed.xvel;
 
-        if (seed.x > this.hillX && seed.y > this.hillY + PIXEL_ART_SIZE) {
+        if (seed.x > this.hillX && seed.y > this.hillY + PIXEL_ART_SIZE * 3) {
           seed.x = this.hillX;
           seed.xvel = -seed.xvel;
         }
