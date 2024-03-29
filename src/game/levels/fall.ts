@@ -4,9 +4,7 @@ import outsideScene from "./fall/outsideScene";
 
 export default function fall(onComplete: () => void) {
   return [
-    outsideScene(() => {
-      onComplete();
-    }),
+    outsideScene(onComplete),
     labeledImageButton(
       "assets/shared/home.png",
       "assets/shared/home-pressed.png",
