@@ -25,7 +25,8 @@ export default class ScrollingContainer extends Container {
         }
         // translation reset by translateBounds
       },
-      this.inversionEffect
+      this.inversionEffect,
+      this.rotation
     );
     context.globalAlpha = oldAlpha;
   }

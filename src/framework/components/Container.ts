@@ -11,6 +11,7 @@ export default class Container extends Component {
   protected opacity: number = 1;
   protected inversionEffect: boolean = false;
   protected disableChildUpdates: boolean = false;
+  protected rotation: number = 0;
 
   constructor(children: ComponentLike[], protected bounds: Rect) {
     super();
@@ -32,7 +33,8 @@ export default class Container extends Component {
           await child.render(context);
         }
       },
-      this.inversionEffect
+      this.inversionEffect,
+      this.rotation
     );
     context.globalAlpha = oldAlpha;
   }
@@ -82,6 +84,11 @@ export default class Container extends Component {
 
   setDisableChildUpdates(disabled: boolean): this {
     this.disableChildUpdates = disabled;
+    return this;
+  }
+
+  setRotation(radians: number): this {
+    this.rotation = radians;
     return this;
   }
 }
