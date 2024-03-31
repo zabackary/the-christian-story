@@ -13,7 +13,7 @@ export default class Container extends Component {
   protected disableChildUpdates: boolean = false;
   protected rotation: number = 0;
 
-  constructor(children: ComponentLike[], protected bounds: Rect) {
+  constructor(children: ComponentLike[], public bounds: Rect) {
     super();
     this.children = children.map((child) => normalizeComponent(child));
   }
