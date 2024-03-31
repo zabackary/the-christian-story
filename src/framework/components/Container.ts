@@ -63,8 +63,11 @@ export default class Container extends Component {
     });
   }
 
-  setBounds(newBounds: Rect): this {
-    this.bounds = newBounds;
+  setBounds(newBounds: Partial<Rect>): this {
+    this.bounds = {
+      ...this.bounds,
+      ...newBounds,
+    };
     return this;
   }
 

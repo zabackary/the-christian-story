@@ -25,7 +25,7 @@ export default class ImageComponent extends Component {
     );
   }
 
-  setBounds(newBounds: Rect) {
-    this.bounds = newBounds;
+  setBounds(newBounds: Partial<Rect>) {
+    this.bounds = { ...this.bounds, ...newBounds };
   }
 }
