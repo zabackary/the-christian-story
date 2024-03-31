@@ -1,22 +1,24 @@
-import { Match } from "../../framework/components/conditionals";
 import { PIXEL_ART_SIZE } from "../gameRoot";
+import StateRecreationMatch from "../utils/StateRecreationMatch";
 import labeledImageButton from "../utils/labeledImageButton";
 import crossAnimationScene from "./redemption/crossAnimationScene";
 import rocksGameScene from "./redemption/rocksGameScene";
 import timelineScene from "./redemption/timelineScene";
 
 export default function redemption(onComplete: () => void) {
-  let sceneSwitcher: Match;
+  let sceneSwitcher: StateRecreationMatch;
   return [
-    (sceneSwitcher = new Match(
+    (sceneSwitcher = new StateRecreationMatch(
       {
-        timelineScene: timelineScene(() => {
-          sceneSwitcher.set("rocksGameScene");
-        }),
-        rocksGameScene: rocksGameScene(() => {
-          sceneSwitcher.set("crossAnimationScene");
-        }),
-        crossAnimationScene: crossAnimationScene(onComplete),
+        timelineScene: () =>
+          timelineScene(() => {
+            sceneSwitcher.set("rocksGameScene");
+          }),
+        rocksGameScene: () =>
+          rocksGameScene(() => {
+            sceneSwitcher.set("crossAnimationScene");
+          }),
+        crossAnimationScene: () => crossAnimationScene(onComplete),
       },
       "timelineScene"
     )),
