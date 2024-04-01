@@ -1,7 +1,9 @@
 import Controller from "./Controller";
 
 export const EASING_CURVES = {
-  sine: (input: number) => Math.sin((input * Math.PI) / 2),
+  sine: (input: number) => (-Math.cos(input * Math.PI) + 1) / 2,
+  "sine-in": (input: number) => -Math.cos((input * Math.PI) / 2),
+  "sine-out": (input: number) => Math.sin((input * Math.PI) / 2),
   "ease-in": (input: number) => input ** 3,
   "ease-out": (input: number) => 1 - (1 - input) ** 3,
   "ease-in-out": (input: number) =>
