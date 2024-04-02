@@ -192,7 +192,7 @@ export default class RockPhysicsComponent extends Component {
         ROCK_MESSAGES[rock.messageIndex],
         rock.rect.x + rock.rect.width / 2,
         rock.rect.y + rock.rect.height / 2,
-        rock.rect.width
+        rock.rect.width - 4 * PIXEL_ART_SIZE
       );
       context.globalAlpha = oldAlpha;
     }
