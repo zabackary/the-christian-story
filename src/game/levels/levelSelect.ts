@@ -274,7 +274,11 @@ export default function levelSelect(
     )),
     (writtenPortionMsg = new MessageComponent(
       "Written Portion",
-      "TODO: write it :("
+      `The four steps of the Christian Story show God’s overall story for the world, starting with Creation. God shows his character through his creation and sustenance of all things living and nonliving. I chose two images to represent two key concepts of creation: an arrow pointing from nothing to a picture of space, representing creation ex nihilo, and a heart, representing the reason behind creation – to analyze using Aristotle’s “Four Causes”, creation was from nothing (material), created by God (efficient), for love (formal) and to love (final). The other representation of creation I chose is a little game of planting trees, representing humanity’s purpose at the beginning: to be caretakers of God’s creation, in His image, sustained by Him.
+For the fall, I used a roll-playing-type interaction to show the temptation of humanity into sin. After eating the fruit, I used a warping animation to literally show the distortion of God’s creation, representing the world as still wholly and completely God’s creation, but with some things out of place, some things twisted. It still left every pixel intact and perfect, but showed sin by making it twisted into something unrecognizably evil. The player continues to the right, encountering God’s salvation plan through an image of the cross.
+Redemption is represented in my project through an outline of redemption in the OT where a senior extended family member would rescue someone from something like poverty or captivity: that patriarch paid something to free the family member and bring them back into the family. After that, I used a game to show that no matter how hard we try, we are always going to be sinful people, literally crushed by sin, and with that note, I showed the cross being erected atop the pile of rocks and with Jesus’ resurrection, us being brought out from death and into God’s family.
+The final piece of the puzzle is the restoration of creation.`,
+      true
     )),
   ];
 }

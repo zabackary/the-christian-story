@@ -47,7 +47,7 @@ export default class MessageComponent extends Container {
 
   public isShowing: boolean = false;
 
-  constructor(title: string, body: string) {
+  constructor(title: string, body: string, compact: boolean = false) {
     const animationController = new InterruptableAnimationController(
       "ease-in-out",
       1000,
@@ -64,13 +64,17 @@ export default class MessageComponent extends Container {
         }),
         (ctx) => {
           ctx.fillStyle = "#333";
-          ctx.font = `34px ${FONT}`;
+          ctx.font = `${compact ? 26 : 34}px ${FONT}`;
           ctx.textAlign = "center";
           ctx.textBaseline = "top";
-          ctx.fillText(title, CANVAS_WIDTH / 2, 28 * PIXEL_ART_SIZE);
+          ctx.fillText(
+            title,
+            CANVAS_WIDTH / 2,
+            (compact ? 25 : 28) * PIXEL_ART_SIZE
+          );
 
           ctx.fillStyle = "#666";
-          ctx.font = `22px ${PROSE_FONT}`;
+          ctx.font = `${compact ? 13 : 22}px ${PROSE_FONT}`;
           ctx.textAlign = "center";
           ctx.textBaseline = "top";
           const paragraphLines = body
@@ -78,13 +82,13 @@ export default class MessageComponent extends Container {
             .map((paragraph) =>
               wrapCanvasLines(ctx, paragraph, 70 * PIXEL_ART_SIZE)
             );
-          let y = 38 * PIXEL_ART_SIZE;
+          let y = (compact ? 31 : 38) * PIXEL_ART_SIZE;
           for (const paragraph of paragraphLines) {
             for (const line of paragraph) {
               ctx.fillText(line, CANVAS_WIDTH / 2, y);
-              y += 30;
+              y += compact ? 14 : 30;
             }
-            y += 10;
+            y += compact ? 2 : 10;
           }
         },
       ],
