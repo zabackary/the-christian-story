@@ -1,20 +1,22 @@
 import { PIXEL_ART_SIZE } from "../gameRoot";
 import labeledImageButton from "../utils/labeledImageButton";
+import globeRevealScene from "./restoration/globeRevealScene";
 
-export default function restoration(onComplete: () => void) {
+export default function fall(onComplete: () => void) {
   return [
+    globeRevealScene(onComplete),
     labeledImageButton(
-      "assets/level-select/down.png",
-      "assets/level-select/down-pressed.png",
+      "assets/shared/home.png",
+      "assets/shared/home-pressed.png",
       (_ctx) => {},
       () => {
         onComplete();
       },
       {
-        x: 0,
-        y: 0,
-        width: 5 * PIXEL_ART_SIZE,
-        height: 5 * PIXEL_ART_SIZE,
+        x: 12,
+        y: 12,
+        width: 8 * PIXEL_ART_SIZE,
+        height: 8 * PIXEL_ART_SIZE,
       }
     ),
   ];
