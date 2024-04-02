@@ -14,7 +14,8 @@ our redemption through Jesus Christ; and the coming restoration and new heaven
 and earth. It aims to convey these concepts in an easy-to-understand and
 approachable format for Christians and non-Christians alike.
 
-The other reason for this project is for my [Intro to Christianity](https://caj.ac.jp/info/index.php/Course_Descriptions#Bible_9:_Introduction_to_Christianity)
+The other reason for this project is for my
+[Intro to Christianity](https://caj.ac.jp/info/index.php/Course_Descriptions#Bible_9:_Introduction_to_Christianity)
 class at [Christian Academy in Japan](https://caj.ac.jp/), a Christian
 international school in Higashikurume, Tokyo, Japan. Maybe I'll get a better
 grade if you star this repo 😂. _(don't worry, the game is probably not good
@@ -42,7 +43,8 @@ changes' licensing is on shaky legal ground and controlled by a high school
 student.
 
 This project is built with [Vite](https://vitejs.dev/). To build and type-check,
-clone the repo with `git clone https://github.com/zabackary/the-christian-story.git`
-then run install the deps and run `pnpm build`. To start the development server,
-run `pnpm dev`. I make use of [PNPM](https://pnpm.io/) for the package manager,
-so install that if you don't have that already.
+clone the repo with
+`git clone https://github.com/zabackary/the-christian-story.git` then run
+install the deps and run `pnpm build`. To start the development server, run
+`pnpm dev`. I make use of [PNPM](https://pnpm.io/) for the package manager, so
+install that if you don't have that already.
