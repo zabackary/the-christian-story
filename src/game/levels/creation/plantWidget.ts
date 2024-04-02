@@ -65,7 +65,7 @@ export default function plantWidget(bounds: Rect) {
       scroller.scrollX + (targetPosition - scroller.scrollX) * 0.05 * factor,
       0
     );
-    physicsController.setDisableSpace(false);
+    physicsController.setEnableSpace(false);
     if (seeds.hasGrownSeeds() && !hintOpacityAnimation.started) {
       hintOpacityAnimation.start();
     }

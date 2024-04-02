@@ -78,7 +78,7 @@ export default function outsideScene(onComplete: () => void) {
     bird.updatePlayerPosition(physicsController.characterHitBox);
     bird2.updatePlayerPosition(physicsController.characterHitBox);
     cross.updatePlayerPosition(physicsController.characterHitBox);
-    physicsController.setDisableSpace(
+    physicsController.setEnableSpace(
       !serpent.isHighlighted &&
         !bird.isHighlighted &&
         !bird2.isHighlighted &&

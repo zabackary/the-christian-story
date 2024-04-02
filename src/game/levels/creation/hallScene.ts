@@ -69,7 +69,7 @@ export default function hallScene(onComplete: () => void) {
     exNihiloPicture.updatePlayerPosition(physicsController.characterHitBox);
     lovePicture.updatePlayerPosition(physicsController.characterHitBox);
     door.updatePlayerPosition(physicsController.characterHitBox);
-    physicsController.setDisableSpace(
+    physicsController.setEnableSpace(
       !helpSign.isHighlighted &&
         !exNihiloPicture.isHighlighted &&
         !lovePicture.isHighlighted &&

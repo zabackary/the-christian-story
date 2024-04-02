@@ -13,14 +13,14 @@ export default class KeyboardSimplePhysicsController extends SimplePhysicsContro
     super(characterHitBox, containerHitBox, bounceEffect);
   }
 
-  private disableSpace: boolean = true;
-  setDisableSpace(disableSpace: boolean) {
-    this.disableSpace = disableSpace;
+  private enableSpace: boolean = true;
+  setEnableSpace(enableSpace: boolean) {
+    this.enableSpace = enableSpace;
   }
 
   jumpCallback(updateInfo: UpdateInfo): void {
     if (
-      (updateInfo.keyboard.pressedKey === " " && this.disableSpace) ||
+      (updateInfo.keyboard.pressedKey === " " && this.enableSpace) ||
       updateInfo.keyboard.pressedKey === "ArrowUp" ||
       updateInfo.keyboard.pressedKey === "w"
     ) {
