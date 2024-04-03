@@ -39,8 +39,9 @@ enough to warrent any praise.)_
 
 If you're inclined to work with TypeScript and HTML5 Canvas (2d context) and you
 think you've found a bug, feel free to send a pull request. Note that your
-changes' licensing is on shaky legal ground and controlled by a high school
-student.
+changes' licensing is on shaky legal ground since I'm not a lawyer, but they
+should be licensed under the MIT license included with your copy of the
+codebase.
 
 This project is built with [Vite](https://vitejs.dev/). To build and type-check,
 clone the repo with
