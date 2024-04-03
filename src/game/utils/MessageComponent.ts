@@ -74,7 +74,7 @@ export default class MessageComponent extends Container {
           );
 
           ctx.fillStyle = "#666";
-          ctx.font = `${compact ? 13 : 22}px ${PROSE_FONT}`;
+          ctx.font = `${compact ? 12 : 22}px ${PROSE_FONT}`;
           ctx.textAlign = "center";
           ctx.textBaseline = "top";
           const paragraphLines = body
@@ -86,7 +86,7 @@ export default class MessageComponent extends Container {
           for (const paragraph of paragraphLines) {
             for (const line of paragraph) {
               ctx.fillText(line, CANVAS_WIDTH / 2, y);
-              y += compact ? 14 : 30;
+              y += compact ? 13 : 30;
             }
             y += compact ? 2 : 10;
           }
