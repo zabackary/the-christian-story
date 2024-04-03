@@ -110,7 +110,7 @@ export default function plantWidget(bounds: Rect) {
               0,
               120 * PIXEL_ART_SIZE * 2 + 62 * PIXEL_ART_SIZE,
               56 * PIXEL_ART_SIZE,
-              120 * PIXEL_ART_SIZE * 2 + 105 * PIXEL_ART_SIZE
+              120 * PIXEL_ART_SIZE * 2 + 93 * PIXEL_ART_SIZE
             )),
             (characterContainer = new Container(
               [
