@@ -147,6 +147,17 @@ export default function levelSelect(
           ctx.textBaseline = "top";
           ctx.fillText("Chapters", 108, 30);
         },
+        (ctx) => {
+          if (window.innerWidth < CANVAS_WIDTH || window.innerHeight < CANVAS_HEIGHT) {
+            ctx.fillStyle = "#855";
+            ctx.fillRect(6, 0, 35 * PIXEL_ART_SIZE, 60);
+            ctx.fillStyle = "#fff";
+            ctx.font = `16px ${FONT}`;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Your screen is too small!", 108, 30);
+          }
+        },
         levelButton("creation", "Creation", 72),
         levelButton("fall", "The Fall", 204),
         levelButton("redemption", "Redemption", 336),
