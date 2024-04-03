@@ -1,7 +1,13 @@
 {
   "name": "the-christian-story",
+  "description": "A game comprising of a collection of mini games and animations detailing the four main ideas of the Christian faith I learned in CAJ's Bible class.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "zabackary",
+    "url": "https://github.com/zabackary"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
