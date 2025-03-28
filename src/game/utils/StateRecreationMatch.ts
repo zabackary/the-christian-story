@@ -12,7 +12,9 @@ export default class StateRecreationMatch extends Match {
   }
 
   set(newKey: string) {
-    super.set(newKey);
-    this.map[newKey].recreateState();
+    window.requestAnimationFrame(() => {
+      super.set(newKey);
+      this.map[newKey].recreateState();
+    });
   }
 }
