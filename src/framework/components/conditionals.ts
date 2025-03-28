@@ -35,7 +35,9 @@ export class Either extends Component {
   }
 
   set(newCondition: boolean) {
-    this.condition = newCondition;
+    window.requestAnimationFrame(() => {
+      this.condition = newCondition;
+    });
   }
 }
 
@@ -72,6 +74,8 @@ export class Match extends Component {
     if (!Object.hasOwn(this.map, newKey)) {
       throw new Error("supplied key to Match isn't in map");
     }
-    this.key = newKey;
+    window.requestAnimationFrame(() => {
+      this.key = newKey;
+    });
   }
 }
