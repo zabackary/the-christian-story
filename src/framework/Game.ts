@@ -22,8 +22,8 @@ export default class Game {
 
   constructor(private canvas: HTMLCanvasElement, rootComponent: ComponentLike) {
     this.rootComponent = normalizeComponent(rootComponent);
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
     this.context = canvas.getContext("2d")!;
   }
 
@@ -46,6 +46,7 @@ export default class Game {
 
   async gameLoop() {
     this.context.reset();
+    this.context.scale(window.devicePixelRatio, window.devicePixelRatio);
     this.context.fillStyle = "#fff";
     this.context.fillRect(0, 0, 99999, 99999);
     this.context.imageSmoothingEnabled = false;
